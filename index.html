@@ -6,20 +6,19 @@
   <title>Izitek Haïti - Portail</title>
   <style>
     * { box-sizing: border-box; }
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: #f5f5f5;
+    body { font-family: sans-serif; margin: 0; background: #f5f5f5; padding: 10px; }
+    .container { max-width: 960px; margin: auto; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 10px;
     }
-    h1 {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 24px;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
+    .lang-switcher {
+      padding: 6px 12px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
     .grid {
       display: grid;
@@ -38,21 +37,52 @@
       font-size: 16px;
       transition: transform 0.2s ease;
     }
-    .tile:hover {
-      transform: scale(1.05);
-    }
+    .tile:hover { transform: scale(1.05); }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Bienvenue sur Izitek Haïti</h1>
+    <div class="header">
+      <h1 id="title">Bienvenue sur Izitek Haïti</h1>
+      <select id="language" class="lang-switcher">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
+    </div>
     <div class="grid">
-      <a class="tile" href="https://netflix.izitekhaiti.com">🎮 Netflix Profiles</a>
-      <a class="tile" href="https://htlèt.izitekhaiti.com">🥛 Lèt & Produits</a>
-      <a class="tile" href="https://technology.izitekhaiti.com">💻 Services Tech</a>
-      <a class="tile" href="https://blog.izitekhaiti.com">📝 Blog</a>
-      <a class="tile" href="https://forum.izitekhaiti.com">📝 Forum</a>
+      <a class="tile" href="https://netflix.izitekhaiti.com" id="link1">🎮 Profils Netflix</a>
+      <a class="tile" href="https://htlèt.izitekhaiti.com" id="link2">🥛 Lèt & Produits</a>
+      <a class="tile" href="https://technology.izitekhaiti.com" id="link3">💻 Services Tech</a>
+      <a class="tile" href="https://blog.izitekhaiti.com" id="link4">📝 Blog</a>
     </div>
   </div>
+
+  <script>
+    const translations = {
+      fr: {
+        title: "Bienvenue sur Izitek Haïti",
+        link1: "🎮 Profils Netflix",
+        link2: "🥛 Lèt & Produits",
+        link3: "💻 Services Tech",
+        link4: "📝 Blog"
+      },
+      en: {
+        title: "Welcome to Izitek Haiti",
+        link1: "🎮 Netflix Profiles",
+        link2: "🥛 Milk & Products",
+        link3: "💻 Tech Services",
+        link4: "📝 Blog"
+      }
+    };
+
+    document.getElementById('language').addEventListener('change', function () {
+      const lang = this.value;
+      document.getElementById('title').textContent = translations[lang].title;
+      document.getElementById('link1').textContent = translations[lang].link1;
+      document.getElementById('link2').textContent = translations[lang].link2;
+      document.getElementById('link3').textContent = translations[lang].link3;
+      document.getElementById('link4').textContent = translations[lang].link4;
+    });
+  </script>
 </body>
 </html>
