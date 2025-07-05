@@ -110,57 +110,8 @@
     </div>
   </div>
 
-  <script>
-    const translations = {
-      fr: {
-        title: "Bienvenue sur Izitek Haïti",
-        link1: "Profils Netflix",
-        link2: "Lèt & Produits",
-        link3: "Services Tech",
-        link4: "Blog"
-      },
-      en: {
-        title: "Welcome to Izitek Haiti",
-        link1: "Netflix Profiles",
-        link2: "Milk & Products",
-        link3: "Tech Services",
-        link4: "Blog"
-      }
-    };
-
-    // Langue
-    document.getElementById('language').addEventListener('change', function () {
-      const lang = this.value;
-      document.getElementById('title').textContent = translations[lang].title;
-      document.getElementById('link1').lastChild.textContent = ' ' + translations[lang].link1;
-      document.getElementById('link2').lastChild.textContent = ' ' + translations[lang].link2;
-      document.getElementById('link3').lastChild.textContent = ' ' + translations[lang].link3;
-      document.getElementById('link4').lastChild.textContent = ' ' + translations[lang].link4;
-      localStorage.setItem('lang', lang);
-    });
-
-    // Mode nuit
-    document.getElementById('toggle-dark').addEventListener('click', function () {
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-
-    // Charger les préférences sauvegardées
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
-
-    const savedLang = localStorage.getItem('lang');
-    if (savedLang && translations[savedLang]) {
-      document.getElementById('language').value = savedLang;
-      document.getElementById('title').textContent = translations[savedLang].title;
-      document.getElementById('link1').lastChild.textContent = ' ' + translations[savedLang].link1;
-      document.getElementById('link2').lastChild.textContent = ' ' + translations[savedLang].link2;
-      document.getElementById('link3').lastChild.textContent = ' ' + translations[savedLang].link3;
-      document.getElementById('link4').lastChild.textContent = ' ' + translations[savedLang].link4;
-    }
-  </script>
+  <script src="js/language.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/init.js"></script>
 </body>
 </html>
