@@ -1,0 +1,1366 @@
+** Borrowed file
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IZISTREAM - Partage d'abonnements streaming en Haïti (Netflix, Disney+, HBO Max, Spotify) à prix réduits. Profils sécurisés avec PIN.">
+    <meta name="keywords" content="Netflix Haïti, partage abonnement streaming, streaming pas cher Haïti, abonnement Disney+ Haïti, Spotify Premium Haïti, compte partagé Haïti">
+    <title>IZISTREAM | Partage d'abonnements Netflix, Disney+, Spotify en Haïti</title>
+    <meta property="og:title" content="IZISTREAM | Streaming abordable en Haïti">
+    <meta property="og:description" content="Accédez aux meilleures plateformes de streaming à prix réduit en Haïti. Profils sécurisés avec PIN.">
+    <meta property="og:image" content="https://i.postimg.cc/435H63bJ/official-logo.png">
+    <meta property="og:url" content="https://izistream.com">
+    <link rel="icon" href="https://i.postimg.cc/435H63bJ/official-logo.png" type="image/jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0b4bea',
+                        secondary: '#551cd8',
+                        accent: '#f03d3f',
+                    },
+                    fontFamily: {
+                        ubuntu: ['Ubuntu', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0b4bea 0%, #551cd8 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .platform-icon {
+            transition: all 0.3s ease;
+        }
+        .platform-icon:hover {
+            transform: scale(1.1);
+        }
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        /* Styles pour le formulaire de contact personnalisé */
+        .form-izistream {
+            max-width: 100%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .form-izistream label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #551cd8;
+        }
+        .form-izistream input, 
+        .form-izistream select, 
+        .form-izistream textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        .form-izistream button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: #f03d3f;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .form-IZISTREAM button:hover {
+            background: #c83230;
+        }
+        .hidden {
+            display: none;
+        }
+        #platformPreview {
+            text-align: center;
+            margin-top: 10px;
+        }
+        #platformPreview img {
+            max-height: 50px;
+            display: none;
+        }
+        #successMessage {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e1f8e8;
+            border-left: 5px solid #0b4bea;
+            color: #1a6634;
+            font-weight: bold;
+            display: none;
+            border-radius: 8px;
+        }
+        
+        /* Dark mode pour le formulaire */
+        .dark .form-izistream {
+            background: #1f2937;
+        }
+        .dark .form-izistream label {
+            color: #a5b4fc;
+        }
+        .dark .form-izistream input,
+        .dark .form-izistream select,
+        .dark .form-izistream textarea {
+            background: #374151;
+            border-color: #4b5563;
+            color: #e5e7eb;
+        }
+        .dark #successMessage {
+            background: #064e3b;
+            color: #d1fae5;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/435H63bJ/official-logo.png" alt="IZISTREAM Logo" class="h-12 rounded-md">
+                <span class="ml-3 text-xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">IZISTREAM</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="nav-link font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="#plans" class="nav-link font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="Plans" data-en="Plans">Plans</a>
+                <a href="#about" class="nav-link font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="À propos" data-en="About">À propos</a>
+                <a href="#payment" class="nav-link font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="Paiement" data-en="Payment">Paiement</a>
+                <a href="#contact" class="nav-link font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="Contact" data-en="Contact">Contact</a>
+                
+                <button id="language-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+                    <span class="lang-fr">FR</span>
+                    <span class="lang-en hidden">EN</span>
+                </button>
+                
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#home" class="nav-link block font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="#plans" class="nav-link block font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="Plans" data-en="Plans">Plans</a>
+                <a href="#about" class="nav-link block font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="À propos" data-en="About">À propos</a>
+                <a href="#payment" class="nav-link block font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="Paiement" data-en="Payment">Paiement</a>
+                <a href="#contact" class="nav-link block font-medium hover:text-primary dark:hover:text-primary transition-colors" data-fr="Contact" data-en="Contact">Contact</a>
+                
+                <div class="flex items-center justify-between">
+                    <button id="mobile-language-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+                        <span class="lang-fr">FR</span>
+                        <span class="lang-en hidden">EN</span>
+                    </button>
+                    
+                    <button id="mobile-theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-black hero-pattern py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                        <span class="lang-fr">Stream smart. Stream IZI.</span>
+                        <span class="lang-en hidden">Stream smart. Stream IZI.</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white/90 mb-8">
+                        <span class="lang-fr">Accédez aux meilleures plateformes de streaming à prix mini.</span>
+                        <span class="lang-en hidden">Access the best streaming platforms at mini prices.</span>
+                    </p>
+                    <a href="#plans" class="inline-block bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-md shadow-lg transition-all transform hover:scale-105">
+                        <span class="lang-fr">Choisir un plan</span>
+                        <span class="lang-en hidden">Choose a plan</span>
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <div class="grid grid-cols-3 gap-4">
+                        <img src="https://i.postimg.cc/HkyDSjZJ/Netflix-Symbol-RGB-1.png" alt="Netflix" class="platform-icon w-16 h-16 md:w-20 md:h-20 object-contain bg-white p-2 rounded-lg shadow-lg">
+                        <img src="https://i.postimg.cc/cLb7JL0c/HBO-Max-Logo-wine.png" alt="HBO Max" class="platform-icon w-16 h-16 md:w-20 md:h-20 object-contain bg-white p-2 rounded-lg shadow-lg">
+                        <img src="https://i.postimg.cc/wvyFcsTM/Amazon-Prime-Video-Logo-PNG-Images.png" alt="Prime Video" class="platform-icon w-16 h-16 md:w-20 md:h-20 object-contain bg-white p-2 rounded-lg shadow-lg">
+                        <img src="https://i.postimg.cc/43MQdNbg/Disney-Logo-wine.png" alt="Disney+" class="platform-icon w-16 h-16 md:w-20 md:h-20 object-contain bg-white p-2 rounded-lg shadow-lg">
+                        <img src="https://i.postimg.cc/jdK058C5/icons8-crunchyroll-50.png" alt="Crunchyroll" class="platform-icon w-16 h-16 md:w-20 md:h-20 object-contain bg-white p-2 rounded-lg shadow-lg">
+                        <img src="https://i.postimg.cc/767ndrvn/Spotify-Primary-Logo-RGB-Green.png" alt="Spotify" class="platform-icon w-16 h-16 md:w-20 md:h-20 object-contain bg-white p-2 rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                <span class="lang-fr">Nos Plans</span>
+                <span class="lang-en hidden">Our Plans</span>
+            </h2>
+            <p class="text-center text-lg mb-12 max-w-2xl mx-auto">
+                <span class="lang-fr">Choisissez le plan qui vous convient et commencez à streamer dès aujourd'hui.</span>
+                <span class="lang-en hidden">Choose the plan that suits you and start streaming today.</span>
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                <!-- Netflix Premium-->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover relative">
+                    <div class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-2 py-1 rounded-bl-lg">
+                        <span class="lang-fr">🔥 Populaire</span>
+                        <span class="lang-en hidden">🔥 Popular</span>
+                    </div>
+                    <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.postimg.cc/Yq8hpDMN/icons8-netflix-50.png" alt="Netflix" class="w-10 h-10 mr-3">
+                            <h3 class="text-xl font-bold">
+                                <span class="lang-fr">Netflix Premium</span>
+                                <span class="lang-en hidden">Netflix Premium</span>
+                            </h3>
+                        </div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-2xl font-bold">
+                                <span class="lang-fr">450 HTG</span>
+								  <span class="lang-en hidden">450 HTG</span>
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400">/
+                                <span class="lang-fr">mois</span>
+                                <span class="lang-en hidden">month</span>
+                            </span>
+                        </div>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Profil privé, PIN</span>
+                                <span class="lang-en hidden">Private profile, PIN</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Ultra HD 4K</span>
+                                <span class="lang-en hidden">Ultra HD 4K</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Aucun partage</span>
+                                <span class="lang-en hidden">No sharing</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50947062356?text=Salut%2C%20je%20choisis%20le%20plan%20Netflix%20Premium" target="_blank" class="block text-center bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                            <span class="lang-fr">Choisir ce plan</span>
+                            <span class="lang-en hidden">Choose this plan</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Netflix Premium-->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.postimg.cc/Yq8hpDMN/icons8-netflix-50.png" alt="Netflix" class="w-10 h-10 mr-3">
+                            <h3 class="text-xl font-bold">
+                                <span class="lang-fr">Netflix Standard</span>
+                                <span class="lang-en hidden">Netflix Standard</span>
+                            </h3>
+                        </div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-2xl font-bold">
+                                <span class="lang-fr">350 HTG</span>
+								<span class="lang-en hidden">350 HTG</span>
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400">/
+                                <span class="lang-fr">mois</span>
+                                <span class="lang-en hidden">month</span>
+								
+                            </span>
+                        </div>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Profil partagé, PIN</span>
+                                <span class="lang-en hidden">Shared profile, PIN</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Ultra HD</span>
+                                <span class="lang-en hidden">Ultra HD</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Streaming fluide</span>
+                                <span class="lang-en hidden">Fluid Streaming</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50947062356?text=Salut%2C%20je%20choisis%20le%20plan%20Netflix%20Personel%20Standard" target="_blank" class="block text-center bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                            <span class="lang-fr">Choisir ce plan</span>
+                            <span class="lang-en hidden">Choose this plan</span>
+                        </a>
+                    </div>
+                </div>   
+                <!-- Disney+ Premium -->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.postimg.cc/VNyNLxrh/icons8-disney-64.png" alt="Disney+" class="w-10 h-10 mr-3">
+                            <h3 class="text-xl font-bold">
+                                <span class="lang-fr">Disney+ Premium</span>
+                                <span class="lang-en hidden">Disney+ Premium</span>
+                            </h3>
+                        </div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-2xl font-bold">
+                                <span class="lang-fr">600 HTG</span>
+								<span class="lang-en hidden">600 HTG</span>
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400">/
+                                <span class="lang-fr">mois</span>
+                                <span class="lang-en hidden">month</span>
+                            </span>
+                        </div>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Profil privé, PIN</span>
+                                <span class="lang-en hidden">Private profile</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Qualité HD</span>
+                                <span class="lang-en hidden">HD Quality</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Téléchargements</span>
+                                <span class="lang-en hidden">Downloads</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50947062356?text=Salut%2C%20je%20choisis%20le%20plan%20Disney%2B%20Premium" target="_blank" class="block text-center bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                            <span class="lang-fr">Choisir ce plan</span>
+                            <span class="lang-en hidden">Choose this plan</span>
+                        </a>
+                    </div>
+                </div>
+              <!-- Disney+ Premium -->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.postimg.cc/VNyNLxrh/icons8-disney-64.png" alt="Disney+" class="w-10 h-10 mr-3">
+                            <h3 class="text-xl font-bold">
+                                <span class="lang-fr">Disney+ Standard</span>
+                                <span class="lang-en hidden">Disney+ Standard</span>
+                            </h3>
+                        </div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-2xl font-bold">
+                                <span class="lang-fr">400 HTG</span>
+								<span class="lang-en hidden">400 HTG</span>
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400">/
+                                <span class="lang-fr">mois</span>
+                                <span class="lang-en hidden">month</span>
+                            </span>
+                        </div>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Profil partagé</span>
+                                <span class="lang-en hidden">Shared profile</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Qualité HD</span>
+                                <span class="lang-en hidden">HD Quality</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Téléchargements</span>
+                                <span class="lang-en hidden">Downloads</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50947062356?text=Salut%2C%20je%20choisis%20le%20plan%20Disney%2B%20Standard" target="_blank" class="block text-center bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                            <span class="lang-fr">Choisir ce plan</span>
+                            <span class="lang-en hidden">Choose this plan</span>
+                        </a>
+                    </div>
+                </div>   
+               
+                <!-- HBO Max -->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.postimg.cc/kMNMfRb2/icons8-hbo-max-50.png" alt="HBO Max" class="w-10 h-10 mr-3">
+                            <h3 class="text-xl font-bold">
+                                <span class="lang-fr">HBO Max Premium</span>
+                                <span class="lang-en hidden">HBO Max Premium</span>
+                            </h3>
+                        </div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-2xl font-bold">
+                                <span class="lang-fr">600 HTG</span>
+								<span class="lang-en hidden">600 HTG</span>
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400">/
+                                <span class="lang-fr">mois</span>
+                                <span class="lang-en hidden">month</span>
+                            </span>
+                        </div>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Profil privé, PIN</span>
+                                <span class="lang-en hidden">Profile with PIN</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">4K, zéro pub</span>
+                                <span class="lang-en hidden">4K, zero ads</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Téléchargements</span>
+                                <span class="lang-en hidden">Downloads</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50947062356?text=Salut%2C%20je%20choisis%20le%20plan%20HBO%20MAX%20Premium" target="_blank" class="block text-center bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                            <span class="lang-fr">Choisir ce plan</span>
+                            <span class="lang-en hidden">Choose this plan</span>
+                        </a>
+                    </div>
+                </div>
+			
+			<!-- HBO Max -->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.postimg.cc/kMNMfRb2/icons8-hbo-max-50.png" alt="HBO Max" class="w-10 h-10 mr-3">
+                            <h3 class="text-xl font-bold">
+                                <span class="lang-fr">HBO Max Standard</span>
+                                <span class="lang-en hidden">HBO Max Standard</span>
+                            </h3>
+                        </div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-2xl font-bold">
+                                <span class="lang-fr">400 HTG</span>
+								<span class="lang-en hidden">400 HTG</span>
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400">/
+                                <span class="lang-fr">mois</span>
+                                <span class="lang-en hidden">month</span>
+                            </span>
+                        </div>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Profil partagé, PIN</span>
+                                <span class="lang-en hidden">Shared Profile with PIN</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">HD, zéro pub</span>
+                                <span class="lang-en hidden">HD, zero ads</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Téléchargements</span>
+                                <span class="lang-en hidden">Downloads</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50947062356?text=Salut%2C%20je%20choisis%20le%20plan%20HBO%20MAX%20Standard" target="_blank" class="block text-center bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                            <span class="lang-fr">Choisir ce plan</span>
+                            <span class="lang-en hidden">Choose this plan</span>
+                        </a>
+                    </div>
+                </div>
+				
+                <!-- Prime Video -->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.postimg.cc/VNJ2TpZ7/icons8-amazon-prime-video-50.png" alt="Prime Video" class="w-10 h-10 mr-3">
+                            <h3 class="text-xl font-bold">
+                                <span class="lang-fr">Prime Video</span>
+                                <span class="lang-en hidden">Prime Video</span>
+                            </h3>
+                        </div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-2xl font-bold">
+                                <span class="lang-fr">650 HTG</span>
+                                <span class="lang-en hidden">650 HTG</span>
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400">/
+                                <span class="lang-fr">mois</span>
+                                <span class="lang-en hidden">month</span>
+                            </span>
+                        </div>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Profil privé, PIN</span>
+                                <span class="lang-en hidden">Private profile with PIN</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Ultra HD</span>
+                                <span class="lang-en hidden">Ultra HD</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Téléchargements</span>
+                                <span class="lang-en hidden">Downloads</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50947062356?text=Salut%2C%20je%20choisis%20le%20plan%20Prime%20Video" target="_blank" class="block text-center bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                            <span class="lang-fr">Choisir ce plan</span>
+                            <span class="lang-en hidden">Choose this plan</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Crunchyroll -->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.postimg.cc/jdK058C5/icons8-crunchyroll-50.png" alt="Crunchyroll" class="w-10 h-10 mr-3">
+                            <h3 class="text-xl font-bold">
+                                <span class="lang-fr">Crunchyroll</span>
+                                <span class="lang-en hidden">Crunchyroll</span>
+                            </h3>
+                        </div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-2xl font-bold">
+                                <span class="lang-fr">550 HTG</span>
+                                <span class="lang-en hidden">550 HTG</span>
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400">/
+                                <span class="lang-fr">mois</span>
+                                <span class="lang-en hidden">month</span>
+                            </span>
+                        </div>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Anime sans pub</span>
+                                <span class="lang-en hidden">Ad-free anime</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Simulcasts</span>
+                                <span class="lang-en hidden">Simulcasts</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="lang-fr">Accès hors ligne</span>
+                                <span class="lang-en hidden">Offline access</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50947062356?text=Salut%2C%20je%20choisis%20le%20plan%20Crunchroll%20Premium" target="_blank" class="block text-center bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                            <span class="lang-fr">Choisir ce plan</span>
+                            <span class="lang-en hidden">Choose this plan</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="lang-fr">À propos</span>
+                <span class="lang-en hidden">About</span>
+            </h2>
+            <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                <div class="flex items-center justify-center mb-6">
+                    <img src="https://i.postimg.cc/435H63bJ/official-logo.png" alt="IZISTREAM Logo" class="h-20 rounded-md">
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-6">
+                    <span class="lang-fr">Notre mission</span>
+                    <span class="lang-en hidden">Our mission</span>
+                </h3>
+                <p class="text-lg mb-6 text-center">
+                    <span class="lang-fr">Nous facilitons l'accès au divertissement pour tous.</span>
+                    <span class="lang-en hidden">We make entertainment accessible for everyone.</span>
+                </p>
+                <p class="text-lg mb-6">
+                    <span class="lang-fr">IZISTREAM est une plateforme haïtienne qui permet aux utilisateurs de partager des abonnements de plateformes de streaming à bas prix de manière sécurisée. Notre objectif est de rendre le divertissement accessible à tous, sans les contraintes des cartes bancaires internationales ou des prix prohibitifs.</span>
+                    <span class="lang-en hidden">IZISTREAM is a Haitian platform that allows users to securely share streaming platform subscriptions at low prices. Our goal is to make entertainment accessible to everyone, without the constraints of international bank cards or prohibitive prices.</span>
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        <h4 class="font-semibold mb-1">
+                            <span class="lang-fr">Sécurisé</span>
+                            <span class="lang-en hidden">Secure</span>
+                        </h4>
+                        <p class="text-sm">
+                            <span class="lang-fr">Profils avec PIN et accès protégés</span>
+                            <span class="lang-en hidden">Profiles with PIN and protected access</span>
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h4 class="font-semibold mb-1">
+                            <span class="lang-fr">Économique</span>
+                            <span class="lang-en hidden">Affordable</span>
+                        </h4>
+                        <p class="text-sm">
+                            <span class="lang-fr">Jusqu'à 70% d'économie sur les abonnements</span>
+                            <span class="lang-en hidden">Up to 70% savings on subscriptions</span>
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h4 class="font-semibold mb-1">
+                            <span class="lang-fr">Simple</span>
+                            <span class="lang-en hidden">Simple</span>
+                        </h4>
+                        <p class="text-sm">
+                            <span class="lang-fr">Paiement local, accès immédiat</span>
+                            <span class="lang-en hidden">Local payment, immediate access</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="payment" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="lang-fr">Méthodes de paiement</span>
+                <span class="lang-en hidden">Payment Methods</span>
+            </h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                    <p class="text-lg mb-8 text-center">
+                        <span class="lang-fr">Nous acceptons plusieurs méthodes de paiement locales pour faciliter vos transactions.</span>
+                        <span class="lang-en hidden">We accept several local payment methods to facilitate your transactions.</span>
+                    </p>
+                    
+                  <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+  <!-- UNIBANK -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm text-center">
+    <img src="https://i.postimg.cc/63gvnK0N/unibank.png" alt="Unibank Logo" class="h-12 w-auto mx-auto mb-4">
+    <h3 class="text-xl font-semibold mb-2">Unibank</h3>
+    <p class="text-gray-600 dark:text-gray-300">
+      <span class="lang-fr">Transfert bancaire</span>
+      <span class="lang-en hidden">Bank transfer</span>
+    </p>
+  </div>
+
+  <!-- SOGEBANK -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm text-center">
+    <img src="https://i.postimg.cc/15c85wLS/sogebank.png" alt="Sogebank Logo" class="h-12 w-auto mx-auto mb-4">
+    <h3 class="text-xl font-semibold mb-2">Sogebank</h3>
+    <p class="text-gray-600 dark:text-gray-300">
+      <span class="lang-fr">Transfert bancaire</span>
+      <span class="lang-en hidden">Bank transfer</span>
+    </p>
+  </div>
+
+  <!-- BUH -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm text-center">
+    <img src="https://i.postimg.cc/V6xJ5Rff/buh.png" alt="BUH Logo" class="h-12 w-auto mx-auto mb-4">
+    <h3 class="text-xl font-semibold mb-2">BUH</h3>
+    <p class="text-gray-600 dark:text-gray-300">
+      <span class="lang-fr">Transfert bancaire</span>
+      <span class="lang-en hidden">Bank transfer</span>
+    </p>
+  </div>
+
+  <!-- MONCASH -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm text-center">
+    <img src="https://i.postimg.cc/dtMC0q32/don-4.png" alt="MonCash Logo" class="h-12 w-auto mx-auto mb-4">
+    <h3 class="text-xl font-semibold mb-2">MonCash</h3>
+    <p class="text-gray-600 dark:text-gray-300">
+      <span class="lang-fr">Paiement mobile</span>
+      <span class="lang-en hidden">Mobile payment</span>
+    </p>
+  </div>
+
+  <!-- NATCASH -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm text-center">
+    <img src="https://i.postimg.cc/mk7t9HkQ/natcash.png" alt="Natcash Logo" class="h-12 w-auto mx-auto mb-4">
+    <h3 class="text-xl font-semibold mb-2">Natcash</h3>
+    <p class="text-gray-600 dark:text-gray-300">
+      <span class="lang-fr">Paiement mobile</span>
+      <span class="lang-en hidden">Mobile payment</span>
+    </p>
+  </div>
+</div>
+                            <p>
+                                <span class="lang-fr">Une fois votre paiement confirmé, vous recevrez immédiatement vos identifiants de connexion par WhatsApp ou email.</span>
+                                <span class="lang-en hidden">Once your payment is confirmed, you will immediately receive your login credentials via WhatsApp or email.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+    <!-- How It Works -->
+    <section id="fonctionnement" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+      <span class="lang-fr">Comment ça fonctionne</span>
+      <span class="lang-en hidden">How It Works</span>
+    </h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300">
+      <span class="lang-fr">Simple, rapide et sécurisé</span>
+      <span class="lang-en hidden">Simple, fast and secure</span>
+    </p>
+    <div class="w-20 h-1 bg-brand-blue mx-auto mt-4"></div>
+  </div>
+</div>
+
+            
+           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="step-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md text-center">
+    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+      <span class="text-2xl font-bold text-brand-blue dark:text-blue-300">1</span>
+    </div>
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+      <span class="lang-fr">Choisissez un plan</span>
+      <span class="lang-en hidden">Choose a plan</span>
+    </h3>
+    <p class="text-gray-600 dark:text-gray-300">
+      <span class="lang-fr">Sélectionnez entre Standard ou Premium selon vos besoins</span>
+      <span class="lang-en hidden">Select between Standard or Premium based on your needs</span>
+    </p>
+  </div>
+
+  <div class="step-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md text-center">
+    <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+      <span class="text-2xl font-bold text-brand-purple dark:text-purple-300">2</span>
+    </div>
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+      <span class="lang-fr">Recevez votre compte</span>
+      <span class="lang-en hidden">Get your account</span>
+    </h3>
+    <p class="text-gray-600 dark:text-gray-300">
+      <span class="lang-fr">Obtenez un compte Netflix avec profil personnel</span>
+      <span class="lang-en hidden">Get a Netflix account with personal profile</span>
+    </p>
+  </div>
+
+  <div class="step-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md text-center">
+    <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto mb-4">
+      <span class="text-2xl font-bold text-brand-red dark:text-red-300">3</span>
+    </div>
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+      <span class="lang-fr">Profitez en toute sécurité</span>
+      <span class="lang-en hidden">Enjoy securely</span>
+    </h3>
+    <p class="text-gray-600 dark:text-gray-300">
+      <span class="lang-fr">Accédez à votre profil protégé par PIN et profitez de vos contenus préférés</span>
+      <span class="lang-en hidden">Access your PIN-protected profile and enjoy your favorite content</span>
+    </p>
+  </div>
+</div>
+
+            
+            <div class="mt-12 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Note Importante</h3>
+                
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-2/3 md:pr-8">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            <span class="lang-fr">Chaque compte Netflix contient 5 profils :</span>
+                            <span class="lang-en hidden">Each Netflix account contains 5 profiles:</span>
+                        </p>
+                        
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300 mb-6">
+                            <li>4 profils privés (Premium) avec PIN individuel</li>
+                            <li>1 profil partagé (Standard) entre 2 personnes avec PIN commun</li>
+                        </ul>
+                        
+                        <p class="text-gray-700  dark:text-gray-300 mb-4">
+                            <span class="lang-fr">Cette structure garantit une expérience utilisateur sécurisée, fluide et confidentielle.</span>
+                            <span class="lang-en hidden">This structure ensures a secure, smooth and confidential user experience.</span>
+                        </p>
+                        
+                        <p class="text-gray-700  dark:text-gray-300">
+                            <span class="lang-fr">Notre équipe reste disponible pour tout ajustement ou question.</span>
+                            <span class="lang-en hidden">Our team remains available for any adjustments or questions.</span>
+                        </p>
+                    </div>
+                    
+                    <div class="md:w-1/3 mt-6 md:mt-0">
+                        <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Règles d'usage</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-red-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="lang-fr">Géolocalisation active</span>
+                                    <span class="lang-en hidden">Active geolocation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-red-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="lang-fr">Aucun transfert de profil</span>
+                                    <span class="lang-en hidden">No profile transfer</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-red-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="lang-fr">Pas de modification des mots de passe</span>
+                                    <span class="lang-en hidden">No password changes</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section id="contact" class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span class="lang-fr">Contactez-nous</span>
+            <span class="lang-en hidden">Contact Us</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="form-izistream dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <form id="iziForm" action="https://formsubmit.co/contact@izistream.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="http://izistream.com/merci.html">
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                        <span class="lang-fr">Nom complet</span>
+                        <span class="lang-en hidden">Full name</span>
+                    </label>
+                    <input type="text" name="name" required class="w-full p-3 mb-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">Email</label>
+                    <input type="email" name="email" required class="w-full p-3 mb-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                        <span class="lang-fr">Téléphone</span>
+                        <span class="lang-en hidden">Phone</span>
+                    </label>
+                    <input type="tel" name="phone" placeholder="+509..." required class="w-full p-3 mb-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                        <span class="lang-fr">Plan souhaité</span>
+                        <span class="lang-en hidden">Desired plan</span>
+                    </label>
+                    <select name="plan" required class="w-full p-3 mb-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                        <option value="">-- Choisir --</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                        <span class="lang-fr">Plateforme</span>
+                        <span class="lang-en hidden">Platform</span>
+                    </label>
+                    <select name="platform" id="platform" required onchange="handlePlatformChange(this)" class="w-full p-3 mb-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                        <option value="">-- Choisir --</option>
+                        <option value="Netflix" data-logo="https://i.postimg.cc/HkyDSjZJ/Netflix-Symbol-RGB-1.png">Netflix</option>
+                        <option value="Disney+" data-logo="https://i.postimg.cc/43MQdNbg/Disney-Logo-wine.png">Disney+</option>
+                        <option value="HBO Max" data-logo="https://i.postimg.cc/cLb7JL0c/HBO-Max-Logo-wine.png">HBO Max</option>
+                        <option value="Prime Video" data-logo="https://i.postimg.cc/43MQdNbg/Disney-Logo-wine.png">Prime Video</option>
+                        <option value="Spotify" data-logo="https://i.postimg.cc/767ndrvn/Spotify-Primary-Logo-RGB-Green.png">Spotify</option>
+                        <option value="Crunchyroll" data-logo="https://i.postimg.cc/jdK058C5/icons8-crunchyroll-50.png">Crunchyroll</option>
+                        <option value="Autres">Autres</option>
+                    </select>
+
+                    <div id="platformPreview" class="mt-3 mb-4 flex justify-center">
+                        <img id="platformLogo" src="" alt="" class="h-12 w-auto transition-all duration-300 opacity-0">
+                    </div>
+
+                    <div id="autresField" class="hidden mb-4">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                            <span class="lang-fr">Spécifiez la plateforme</span>
+                            <span class="lang-en hidden">Specify the platform</span>
+                        </label>
+                        <input type="text" name="autres" placeholder="Ex: Apple TV+, Deezer..." class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                    </div>
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                        <span class="lang-fr">Message (optionnel)</span>
+                        <span class="lang-en hidden">Message (optional)</span>
+                    </label>
+                    <textarea name="message" rows="3" class="w-full p-3 mb-6 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-all"></textarea>
+
+                    <button type="submit" class="w-full py-3 px-6 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark transition-colors duration-300">
+                        <span class="lang-fr">Envoyer</span>
+                        <span class="lang-en hidden">Send</span>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-gray-900 dark:text-gray-100">
+                <h3 class="text-xl font-semibold mb-6">
+                    <span class="lang-fr">Autres moyens de contact</span>
+                    <span class="lang-en hidden">Other contact methods</span>
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">
+                                <span class="lang-fr">Email</span>
+                                <span class="lang-en hidden">Email</span>
+                            </h4>
+                            <a href="/cdn-cgi/l/email-protection#b4d7dbdac0d5d7c0f4ddceddc7c0c6d1d5d99ad7dbd9" class="text-primary hover:underline"><span class="__cf_email__" data-cfemail="35565a5b41545641755c4f5c4641475054581b565a58">[email&#160;protected]</span></a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <svg class="h-6 w-6 text-primary" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">WhatsApp</h4>
+                            <a href="https://wa.me/message/SF47AFX5NV2BB1" target="_blank" class="text-primary hover:underline">
+                                <span class="lang-fr">Contacter sur WhatsApp</span>
+                                <span class="lang-en hidden">Contact on WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">
+                                <span class="lang-fr">Heures d'ouverture</span>
+                                <span class="lang-en hidden">Opening hours</span>
+                            </h4>
+                            <p>
+                                <span class="lang-fr">Lun-Sam: 9h00 - 18h00</span>
+                                <span class="lang-en hidden">Mon-Sat: 9:00 AM - 6:00 PM</span>
+                            </p>
+                            <p>
+                                <span class="lang-fr">Dim: 12h00 - 18h00</span>
+                                <span class="lang-en hidden">Sun: 12:00 PM - 6:00 PM</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">
+                                <span class="lang-fr">Réponse rapide</span>
+                                <span class="lang-en hidden">Quick response</span>
+                            </h4>
+                            <p>
+                                <span class="lang-fr">Nous répondons généralement en moins de 30 minutes pendant nos heures d'ouverture.</span>
+                                <span class="lang-en hidden">We usually respond in less than 30 minutes during our opening hours.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    function handlePlatformChange(selectElement) {
+        const platformLogo = document.getElementById('platformLogo');
+        const autresField = document.getElementById('autresField');
+        const selectedOption = selectElement.options[selectElement.selectedIndex];
+        const logoSrc = selectedOption.getAttribute('data-logo');
+
+        if (logoSrc) {
+            platformLogo.src = logoSrc;
+            platformLogo.classList.remove('opacity-0');
+            platformLogo.classList.add('opacity-100');
+        } else {
+            platformLogo.classList.remove('opacity-100');
+            platformLogo.classList.add('opacity-0');
+            platformLogo.src = ""; // Clear the src if no logo
+        }
+
+        if (selectedOption.value === 'Autres') {
+            autresField.classList.remove('hidden');
+        } else {
+            autresField.classList.add('hidden');
+        }
+    }
+</script>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="lang-fr">Questions fréquentes</span>
+                <span class="lang-en hidden">FAQ</span>
+            </h2>
+            
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center">
+                        <span class="lang-fr">Comment fonctionne le partage d'abonnement ?</span>
+                        <span class="lang-en hidden">How does subscription sharing work?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600 dark:text-gray-300">
+                            <span class="lang-fr">Nous créons un compte premium sur la plateforme choisie et vous attribuons un profil personnel sécurisé par PIN. Vous payez seulement votre part de l'abonnement.</span>
+                            <span class="lang-en hidden">We create a premium account on your chosen platform and assign you a personal profile secured with PIN. You only pay your share of the subscription.</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 font-medium flex justify-between items-center">
+                        <span class="lang-fr">Est-ce que c'est légal ?</span>
+                        <span class="lang-en hidden">Is this legal?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600 dark:text-gray-300">
+                            <span class="lang-fr">Oui, nous utilisons les fonctionnalités de profils multiples offertes par les plateformes. Chaque utilisateur a son propre espace sécurisé.</span>
+                            <span class="lang-en hidden">Yes, we use the multiple profile features offered by platforms. Each user has their own secured space.</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Ajoutez d'autres questions ici -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <img src="https://i.postimg.cc/435H63bJ/official-logo.png" alt="IZISTREAM Logo" class="h-10 mb-4">
+                    <p class="text-gray-400 max-w-xs">
+                        Simplifiez vos abonnements aux services de streaming avec IZISTREAM.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white">Accueil</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white">À propos</a></li>
+                            <li><a href="#plans" class="text-gray-400 hover:text-white">Nos Plans</a></li>
+                            <li><a href="#fonctionnement" class="text-gray-400 hover:text-white">Fonctionnement</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Politiques</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Politique de confidentialité</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Conditions de renouvellement</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Conditions d'annulation</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Mentions légales</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/izistream/" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/message/SF47AFX5NV2BB1" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <a href="https://portal.izistream.com" class="btn inline-block bg-brand-blue hover:bg-blue-700 dark:hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg">
+                                Espace Client
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 IZISTREAM. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Platform logo preview
+        function handlePlatformChange(select) {
+            const preview = document.getElementById('platformPreview');
+            const logoImg = document.getElementById('platformLogo');
+            const autresField = document.getElementById('autresField');
+            
+            if (select.value === 'Autres') {
+                preview.style.display = 'none';
+                autresField.classList.remove('hidden');
+            } else {
+                const selectedOption = select.options[select.selectedIndex];
+                const logoUrl = selectedOption.getAttribute('data-logo');
+                
+                if (logoUrl) {
+                    logoImg.src = logoUrl;
+                    logoImg.classList.remove('opacity-0');
+                    preview.style.display = 'block';
+                } else {
+                    preview.style.display = 'none';
+                }
+                autresField.classList.add('hidden');
+            }
+        }
+
+        // Language toggle
+        const languageToggle = document.getElementById('language-toggle');
+        const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
+        
+        function toggleLanguage() {
+            document.querySelectorAll('.lang-fr').forEach(el => el.classList.toggle('hidden'));
+            document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden'));
+        }
+        
+        languageToggle.addEventListener('click', toggleLanguage);
+        mobileLanguageToggle.addEventListener('click', toggleLanguage);
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        
+        function toggleTheme() {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('svg');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                // Show success message (in a real scenario, you would send data to a server)
+                formMessage.classList.remove('hidden');
+                formMessage.classList.add('text-green-600');
+                formMessage.textContent = 'Merci ! Votre message a été envoyé avec succès.';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            } else {
+                formMessage.classList.remove('hidden');
+                formMessage.classList.add('text-red-600');
+                formMessage.textContent = 'Veuillez remplir tous les champs.';
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95157fada61b60cd',t:'MTc1MDE5NDI2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "38dc1d436fb9414b9505dd75e75aaf91"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>
